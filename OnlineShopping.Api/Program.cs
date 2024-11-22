@@ -1,4 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
+using OnlineShopping.Data;
+
 namespace OnlineShopping.Api
 {
     public class Program
@@ -8,6 +11,13 @@ namespace OnlineShopping.Api
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+
+
+
+            builder.Services.AddDbContext<OnlineShoppingDbContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -14,8 +14,4 @@
     <ProjectReference Include="..\OnlineShopping.Business\OnlineShopping.Business.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
