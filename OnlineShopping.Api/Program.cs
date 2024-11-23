@@ -1,6 +1,6 @@
 
 using Microsoft.EntityFrameworkCore;
-using OnlineShopping.Data;
+using OnlineShopping.Models.Models;
 
 namespace OnlineShopping.Api
 {
@@ -14,7 +14,7 @@ namespace OnlineShopping.Api
 
 
 
-            builder.Services.AddDbContext<OnlineShoppingDbContext>(options =>
+            builder.Services.AddDbContext<OnlineShoppingContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
