@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace OnlineShopping.Data.Repositories
 {
-    public interface ICategoryRepository
+    public interface ICategoryRepository : IRepository<Category>
     {
-        IEnumerable<Category> GetAll(string name);
+        IEnumerable<Category> GetAllCategory(string name);
     }
 
     public class CategoryRepository : BaseRepository<Category>, ICategoryRepository
@@ -19,7 +19,7 @@ namespace OnlineShopping.Data.Repositories
         {
         }
 
-        public IEnumerable<Category> GetAll(string name)
+        public IEnumerable<Category> GetAllCategory(string name)
         {
             return this._context.Categories.Where(c => c.Name.Contains(name)).ToList();
         }

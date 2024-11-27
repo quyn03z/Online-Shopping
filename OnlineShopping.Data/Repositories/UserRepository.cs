@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OnlineShopping.Data.Repositories
 {
-    public interface IUserRepository
+    public interface IUserRepository : IRepository<User>
     {
 
     }

@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace OnlineShopping.Data.Repositories
 {
-    public interface IRoleRepository
-    {
+    public interface IRoleRepository : IRepository<Role>
+    { 
 
     }
     public class RoleRepository : BaseRepository<Role>, IRoleRepository

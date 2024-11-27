@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OnlineShopping.Data.Repositories
 {
-    public interface IPaymentMethodRepository
+    public interface IPaymentMethodRepository : IRepository<PaymentMethod>
     {
 
     }
