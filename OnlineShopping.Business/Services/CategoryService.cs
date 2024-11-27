@@ -31,28 +31,26 @@ namespace OnlineShopping.Business.Services
         public void Add(Category category)
         {
             _categoryRepository.Add(category);
-            _unitOfWork.Commit();
-
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _categoryRepository.Delete(id);
         }
 
         public IEnumerable<Category> GetAll()
         {
-            throw new NotImplementedException();
+            return _categoryRepository.GetAll();
         }
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+           _unitOfWork.Commit();
         }
 
         public void Update(Category category)
         {
-            throw new NotImplementedException();
+            _categoryRepository.Update(category);
         }
     }
 }
