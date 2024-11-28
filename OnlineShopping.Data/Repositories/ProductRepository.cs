@@ -10,12 +10,18 @@ namespace OnlineShopping.Data.Repositories
 {
     public interface IProductRepository : IRepository<Product>
     {
+        IEnumerable<Product> GetAllById(int id);
 
     }
     public class ProductRepository : BaseRepository<Product>, IProductRepository
     {
         public ProductRepository(IDbFactory dbFactory) : base(dbFactory)
         {
+        }
+
+        public IEnumerable<Product> GetAllById(int id)
+        {
+            return _context.Products.Where(p => p.Id == id).ToList();    
         }
     }
 }

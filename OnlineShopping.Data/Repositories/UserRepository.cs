@@ -10,7 +10,7 @@ namespace OnlineShopping.Data.Repositories
 {
     public interface IUserRepository : IRepository<User>
     {
-
+        User Login(string userName, string password);   
     }
     public class UserRepository : BaseRepository<User>, IUserRepository
     {
@@ -18,5 +18,10 @@ namespace OnlineShopping.Data.Repositories
         {
         }
 
+        public User Login(string userName, string password)
+        {
+            return _context.Users.FirstOrDefault(u => u.Username == userName 
+                                    && u.PasswordHash == HashPassword(password));
+        }
     }
 }
