@@ -54,6 +54,11 @@ namespace OnlineShopping.Business.Services
             return _productRepository.GetAllById(id);
         }
 
+        public IEnumerable<Product> GetMultiPaging(Expression<Func<Product, bool>> filter, out int total, int index = 0, int size = 50, string[] includes = null)
+        {
+            throw new NotImplementedException();
+        }
+
         public void SaveChanges()
         {
             _unitOfWork.Commit();

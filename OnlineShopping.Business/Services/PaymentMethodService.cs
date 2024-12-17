@@ -12,7 +12,7 @@ namespace OnlineShopping.Business.Services
     public interface IPaymentMethodService
     {
         void Add(PaymentMethod paymentMethod);
-        void Update(PaymentMethod category);
+        void Update(PaymentMethod paymentMethod);
         void Delete(int id);
         IEnumerable<PaymentMethod> GetAll();
         void SaveChanges();

@@ -8,7 +8,9 @@ namespace OnlineShopping.Models.Models;
 
 public partial class OnlineShoppingContext : DbContext
 {
- 
+    public OnlineShoppingContext()
+    {
+    }
 
     public OnlineShoppingContext(DbContextOptions<OnlineShoppingContext> options)
         : base(options)

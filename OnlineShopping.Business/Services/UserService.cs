@@ -11,36 +11,36 @@ namespace OnlineShopping.Business.Services
 {
     public interface IUserService
     {
-        void Add(Category category);
-        void Update(Category category);
+        void Add(User user);
+        void Update(User user);
         void Delete(int id);
-        IEnumerable<Category> GetAll();
+        IEnumerable<User> GetAll();
         void SaveChanges();
     }
     public class UserService : IUserService
     {
-        private readonly ICategoryRepository _categoryRepository;
+        private readonly IUserRepository _userRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public UserService(ICategoryRepository categoryRepository, IUnitOfWork unitOfWork)
+        public UserService(IUserRepository userRepository, IUnitOfWork unitOfWork)
         {
-            _categoryRepository = categoryRepository;
+            _userRepository = userRepository;
             _unitOfWork = unitOfWork;
         }
 
-        public void Add(Category category)
+        public void Add(User user)
         {
-            _categoryRepository.Add(category);
+            _userRepository.Add(user);
         }
 
         public void Delete(int id)
         {
-            _categoryRepository.Delete(id);
+            _userRepository.Delete(id);
         }
 
-        public IEnumerable<Category> GetAll()
+        public IEnumerable<User> GetAll()
         {
-            return _categoryRepository.GetAll();
+            return _userRepository.GetAll();
         }
 
         public void SaveChanges()
@@ -48,9 +48,9 @@ namespace OnlineShopping.Business.Services
             _unitOfWork.Commit();
         }
 
-        public void Update(Category category)
+        public void Update(User user)
         {
-            _categoryRepository.Update(category);
+            _userRepository.Update(user);
         }
     }
 }

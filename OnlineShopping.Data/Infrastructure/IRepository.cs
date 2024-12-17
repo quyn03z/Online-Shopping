@@ -19,7 +19,6 @@ namespace OnlineShopping.Data.Infrastructure
         T? GetById(Guid id);
 
         IEnumerable<T> GetAll();
-        IEnumerable<T> GetAllById(int id);
         Task<IEnumerable<T>> GetAllAsync();
 
         //Phương thức này trả về một truy vấn cơ bản (IQueryable<T>) cho tất cả các đối tượng kiểu T từ nguồn dữ liệu, mà không có bất kỳ điều kiện lọc hoặc sắp xếp nào.
