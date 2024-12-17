@@ -1,5 +1,8 @@
-
+﻿
 using Microsoft.EntityFrameworkCore;
+using OnlineShopping.Business.Services;
+using OnlineShopping.Data.Infrastructure;
+using OnlineShopping.Data.Repositories;
 using OnlineShopping.Models.Models;
 
 namespace OnlineShopping.Api
@@ -20,6 +23,11 @@ namespace OnlineShopping.Api
 
 
             builder.Services.AddControllers();
+            builder.Services.AddScoped<IDbFactory,DbFactory>();
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IAuthService, AuthService>();
+
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
